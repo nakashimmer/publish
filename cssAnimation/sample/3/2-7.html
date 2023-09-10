@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSSアニメーション</title>
+		<style>
+			div {
+				border: 1px solid gray;
+				/*枠線*/
+				width: 200px;
+				/*コンテンツ横幅*/
+				height: 200px;
+				/*コンテンツ高さ*/
+				margin: 200px auto;
+				/*外余白*/
+				padding: 0px;
+				/*内側余白*/
+				text-align: center;
+				/*文字の左右真中揃*/
+				line-height: 200px;
+				/*行高*/
+			}
+
+			#parent {
+				position: relative;
+				margin: 50px auto;
+				width: 500px;
+				height: 400px;
+				overflow: hidden;
+			}
+
+			.center {
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				bottom: 0px;
+				left: 0px;
+				margin: auto;
+			}
+
+			/*アニメーション*/
+			#child1 {
+				width: 200px;
+				height: 200px;
+				background-image: url(image.png);
+				background-size: 100% 100%;
+				animation-name: anime1, anime2;
+				animation-duration: 1s, 0.5s;
+				animation-timing-function: linear;
+				animation-delay: 0s, 1s;
+				animation-iteration-count: infinite;
+				animation-direction: normal, alternate;
+				animation-fill-mode: both, both;
+			}
+
+			@keyframes anime1 {
+				0% {
+					translate: 200px 0px;
+				}
+
+				100% {
+					translate: -200px 0px;
+				}
+			}
+
+			@keyframes anime2 {
+				0% {
+					rotate: -180deg;
+				}
+
+				100% {
+					rotate: 180deg;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="parent">
+			<div id="child1" class="center"></div>
+		</div>
+	</body>
+</html>

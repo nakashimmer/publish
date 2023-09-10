@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSSアニメーション</title>
+		<style>
+			div {
+				border: 1px solid gray;
+				/*枠線*/
+				width: 200px;
+				/*コンテンツ横幅*/
+				height: 200px;
+				/*コンテンツ高さ*/
+				margin: 200px auto;
+				/*外余白*/
+				padding: 0px;
+				/*内側余白*/
+				text-align: center;
+				/*文字の左右真中揃*/
+				line-height: 200px;
+				/*行高*/
+			}
+
+			/*トランジション*/
+			#box1 {
+				background-image: url(image.png);
+				/*背景画像*/
+				background-size: 100% 100%;
+				/*背景のサイズ*/
+				border: none;
+				/*枠線の無効化*/
+				transition: filter 1s ease-in-out 0s;
+			}
+
+			#box1:hover {
+				filter: hue-rotate(360deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1"></div>
+	</body>
+</html>
